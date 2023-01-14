@@ -56,12 +56,12 @@
 
     <script>
         function currencyConverter() {
-      // Access the values of amount and Currence Code in the Document Object Model (DOM)
+      // Access the values of amount and Currency Code in the Document Object Model (DOM)
       let amount = document.getElementById("amount").value;
       let fromCurrency = document.getElementById("fromCurrency").value;
       let toCurrency = document.getElementById("toCurrency").value;
       
-      // Exchange rates non-static values
+      // Exchange rate values
       let exchangeRates = {
         USD: 1,
         EUR: 0.92,
@@ -69,7 +69,7 @@
         PHP: 54.93,
       };
       
-      // Currency converter formula
+      // Converter formula
       let convertedAmount = amount * exchangeRates[toCurrency] / exchangeRates[fromCurrency];
       
       
