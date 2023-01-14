@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>  
+    <title>Currency Converter</title>
+</head>
+<body>
+    <div class="container  py-5 my-5">
+        <h3 class="text-primary text-center">Javascript - Simple Currency Converter</h3>
+        <div class="container justify-content-center col-6 border border-primary">
+            <div class="card-body">
+                <h4 class="text-center">Converter</h4>
+                <hr style="border-top:1px groovy #ccc;"/>
+                <form>
+                  <div class="form-group">
+                    <div class="form-group">
+                        <label for="amount">Enter Amount:</label>
+                        <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+                      </div>
+                      <div class="form-group">
+                        <label for="fromCurrency">From Currency:</label>
+                        <select class="form-control" id="fromCurrency">
+                          <option value="USD">USD</option>
+                          <option value="EUR">EUR</option>
+                          <option value="JPY">JPY</option>
+                          <option value="PHP">PHP</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="toCurrency">To Currency:</label>
+                        <select class="form-control" id="toCurrency">
+                          <option value="USD">USD</option>
+                          <option value="EUR">EUR</option>
+                          <option value="JPY">JPY</option>
+                          <option value="PHP">PHP</option>
+                        </select>
+                      </div>
+                      <button type="button" class="btn btn-primary mt-2 " onclick="currencyConverter()">Convert</button>
+                </div>
+                </form>
+                
+                <br />
+                <div class="form-group">
+                    <label>Converted Currency:</label>
+                    <p id="result" class="text-primary fw-bold pt-2"></p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <script>
+        function currencyConverter() {
+      // Access the values of amount and Currence Code in the Document Object Model (DOM)
+      let amount = document.getElementById("amount").value;
+      let fromCurrency = document.getElementById("fromCurrency").value;
+      let toCurrency = document.getElementById("toCurrency").value;
+      
+      // Exchange rates non-static values
+      let exchangeRates = {
+        USD: 1,
+        EUR: 0.92,
+        JPY: 129.15,
+        PHP: 54.99,
+      };
+      
+      // Currency converter formula
+      let convertedAmount = amount * exchangeRates[toCurrency] / exchangeRates[fromCurrency];
+      
+      
+      // Displaying  the result inside the HTML
+      document.getElementById("result").innerHTML = amount + " " + fromCurrency + " = " + convertedAmount + " " + toCurrency;
+    }
+    
+      </script>
+</body>
+</html>
