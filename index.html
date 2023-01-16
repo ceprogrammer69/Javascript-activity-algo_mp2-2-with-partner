@@ -61,6 +61,7 @@
       let fromCurrency = document.getElementById("fromCurrency").value;
       let toCurrency = document.getElementById("toCurrency").value;
       
+      
       // Exchange rate values (Object literals) 
       let exchangeRates = {
         USD: 1,
@@ -75,10 +76,15 @@
       convertedAmount = convertedAmount.toFixed(2);
       
       
-      // Displaying  the result inside the HTML
-      document.getElementById("result").innerHTML = amount + " " + fromCurrency + " = " + convertedAmount + " " + toCurrency;
+      // Displaying  the result inside the HTML with Conditional
+      if (amount < 0) {
+        document.getElementById("result").innerHTML = " Invalid Amount";
+      } else {
+        document.getElementById("result").innerHTML = amount + " " + fromCurrency + " = " + convertedAmount + " " + toCurrency;
+      }
     }
-    
+
+   
       </script>
 </body>
 </html>
