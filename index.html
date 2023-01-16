@@ -46,7 +46,7 @@
                 <br />
                 <div class="form-group">
                     <label>Converted Currency:</label>
-                    <p id="result" class="text-primary fw-bold pt-2"></p>
+                    <p id="output" class="text-primary fw-bold pt-2"></p>
                 </div>
             </div>
           </div>
@@ -71,16 +71,16 @@
       };
       
       // Converter formula
-      let convertedAmount = amount * exchangeRates[toCurrency] / exchangeRates[fromCurrency];
+      let outputAmount = amount * exchangeRates[toCurrency] / exchangeRates[fromCurrency];
       // Round the convertedAmount to two decimal places
-      convertedAmount = convertedAmount.toFixed(2);
+      outputAmount = outputAmount.toFixed(2);
       
       
       // Displaying  the result inside the HTML with Conditional
       if (amount < 0) {
-        document.getElementById("result").innerHTML = "Invalid Amount";
+        document.getElementById("output").innerHTML = "Invalid Amount";
       } else {
-        document.getElementById("result").innerHTML = amount + " " + fromCurrency + " = " + convertedAmount + " " + toCurrency;
+        document.getElementById("output").innerHTML = amount + " " + fromCurrency + " = " + outputAmount + " " + toCurrency;
       }
     }
 
