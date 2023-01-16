@@ -56,12 +56,12 @@
 
     <script>
         function currencyConverter() {
-      // Access the values of amount and Currency Code in the Document Object Model (DOM)
+      // Create variables to Access the values of amount and Currency Code in the Document Object Model (DOM)
       let amount = document.getElementById("amount").value;
       let fromCurrency = document.getElementById("fromCurrency").value;
       let toCurrency = document.getElementById("toCurrency").value;
       
-      // Exchange rate values
+      // Exchange rate values (Object literals) 
       let exchangeRates = {
         USD: 1,
         EUR: 0.92,
@@ -71,6 +71,7 @@
       
       // Converter formula
       let convertedAmount = amount * exchangeRates[toCurrency] / exchangeRates[fromCurrency];
+      convertedAmount = convertedAmount.toFixed(2);
       
       
       // Displaying  the result inside the HTML
