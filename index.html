@@ -71,6 +71,7 @@
       
       // Converter formula
       let convertedAmount = amount * exchangeRates[toCurrency] / exchangeRates[fromCurrency];
+      // Round the convertedAmount to two decimal places
       convertedAmount = convertedAmount.toFixed(2);
       
       
